@@ -1,0 +1,57 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "2025-08-01T13:04:46Z",
+    "title" : "nextworkmisolaproject"
+  },
+  "host" : "4qtq345tyf.execute-api.us-east-1.amazonaws.com",
+  "basePath" : "/production",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/users" : {
+      "get" : {
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            }
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:774305575555:function:nextworkmisolaproject/invocations",
+          "responses" : {
+            "default" : {
+              "statusCode" : "200"
+            }
+          },
+          "passthroughBehavior" : "when_no_match",
+          "timeoutInMillis" : 29000,
+          "contentHandling" : "CONVERT_TO_TEXT",
+          "type" : "aws_proxy"
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Empty" : {
+      "type" : "object",
+      "title" : "Empty Schema"
+    }
+  },
+  "x-amazon-apigateway-documentation" : {
+    "version" : "production-test",
+    "createdDate" : "2025-08-01T13:48:17Z",
+    "documentationParts" : [ {
+      "location" : {
+        "type" : "API"
+      },
+      "properties" : {
+        "description" : "The UserRequestAPI manages user data retrieval and manipulation. It supports operations to retrieve user details based on unique identifiers.",
+        "baseURL" : "https://yo8z6vf1ql.execute-api.us-east-2.amazonaws.com/"
+      }
+    } ]
+  }
+}
